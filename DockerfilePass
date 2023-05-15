@@ -1,0 +1,7 @@
+FROM python:3.11.3
+WORKDIR .
+RUN apt-get update
+COPY pass.py .
+COPY requirementsContraseña.txt .
+RUN pip3 install -r requirementsContraseña.txt
+CMD [ "python","pass.py" ]

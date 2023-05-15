@@ -1,0 +1,7 @@
+FROM python:3.11.3
+RUN apt-get update
+WORKDIR .
+COPY api.py .
+COPY requirementsApi.txt .
+RUN pip3 install -r requirementsApi.txt
+CMD [ "python","api.py" ]

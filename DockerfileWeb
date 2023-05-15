@@ -1,0 +1,8 @@
+FROM python:3.11.3
+WORKDIR .
+RUN apt-get update
+COPY ./templates/ ./templates/
+COPY web.py .
+COPY requirementsWeb.txt .
+RUN pip3 install -r requirementsWeb.txt
+CMD [ "python","web.py" ]

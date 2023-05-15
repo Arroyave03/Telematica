@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Página de inicio</title>
+  </head>
+  <body>
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+      <div id='chart' class='chart'” style="width: 100vw; height: 100vh; "></div>
+  </body>
+
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script type='text/javascript'>
+    var graphs = {{mapa | safe}};
+    Plotly.plot('chart',graphs,{});
+  </script>
+</html>
